@@ -1,11 +1,9 @@
 
-// import PropTypes from 'prop-types';
+ import PropTypes from 'prop-types';
 
-Header.propTypes = {
-    
-};
 
-function Header() {
+
+function Header({blance}) {
     return (
        <header className="flex justify-between mt-0 items-center">
         <div className="flex items-center">
@@ -14,18 +12,20 @@ function Header() {
 
         </div>
         <div>
-            <ul className="flex gap-5 justify-center font-semibold">
+            <ul className=" hidden  md:flex gap-5 justify-center font-semibold">
                 <li>Home</li>
                 <li>Blogs</li>
                 <li>About</li>
             </ul>
         </div>
         <div className="flex gap-4">
-            <p className="text-2xl">Blance : <span className="font-bold">$ 500</span></p>
+            <p className="text-2xl">Blance : <span className="font-bold">$ {blance}</span></p>
             <img className="w-10 rounded-full p-1 border" src="https://img.icons8.com/?size=100&id=2952&format=png&color=000000" alt="" />
         </div>
        </header>
     );
 }
-
+Header.propTypes = {
+    blance:PropTypes.number.isRequired
+};
 export default Header;
